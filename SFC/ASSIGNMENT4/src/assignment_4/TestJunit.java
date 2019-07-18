@@ -1,4 +1,4 @@
-package ASSIGNMENT4;
+package assignment_4;
 
 import org.junit.Test;
 import org.junit.Assert;

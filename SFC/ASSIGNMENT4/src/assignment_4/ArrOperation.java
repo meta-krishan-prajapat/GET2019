@@ -1,4 +1,4 @@
-package ASSIGNMENT4;
+package assignment_4;
 
 /**
  * @author krishan ArrOperation class have different methods that will perform
@@ -108,22 +108,23 @@ public class ArrOperation {
 	 *                   elements of the same value.
 	 */
 	public int countClumps(int array[]) throws Exception {
-
-		if (array.length == 0) {
-			throw (new Exception("Empty Array"));
-		}
 		boolean flag = false;
 		int counter = 0;
 		try {
-			for (int i = 0; i < array.length - 1; i++) {
-				if (array[i] == array[i + 1] && flag == false) {
-					counter++;
+			if (array.length == 0) {
+				throw (new Exception("Empty Array"));
+			}
+
+			for (int i = 0; i < array.length; i++) {
+				if (array[i] == array[i + 1] && !flag) {
 					flag = true;
-				} else {
+					counter++;
+				} else if (array[i] != array[i + 1]) {
 					flag = false;
 				}
 			}
 		} catch (Exception e) {
+
 			e.printStackTrace();
 		}
 		return counter;
@@ -172,7 +173,6 @@ public class ArrOperation {
 							} else {
 								k++;
 							}
-
 						}
 					}
 				}
@@ -231,13 +231,6 @@ public class ArrOperation {
 			e.printStackTrace();
 		}
 		return split_position;
-	}
-
-	public static void main(String[] args) throws Exception {
-		ArrOperation obj = new ArrOperation();
-		int arr[] = { 1, 2, 2, 1 };
-		int max = obj.maxMirror(arr);
-		System.out.print(max);
 	}
 
 }
