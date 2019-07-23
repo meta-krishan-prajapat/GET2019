@@ -191,7 +191,6 @@ public class HexCalc {
 			System.out.println(ob.convertFromDecimal(116, 16));
 			// 1E is 30 and 35 is 53
 			String aString = "1E", bString = "35";
-			;
 			System.out.println("addition:" + ob.add(aString, bString));
 			System.out.println("substraction:" + ob.subtract(aString, bString));
 			System.out.println("multiplication:" + ob.multiply(aString, bString));
