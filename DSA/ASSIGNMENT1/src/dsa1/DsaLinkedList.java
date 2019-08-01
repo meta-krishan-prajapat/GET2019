@@ -46,9 +46,7 @@ public class DsaLinkedList {
 	 */
 	public DsaLinkedList insert(DsaLinkedList list, int data) {
 		try {
-			if (list == null) {
-				throw (new Exception("list cant be empty"));
-			}
+			
 			Node newNode = new Node(data);
 			if (list.head == null) {
 				list.head = newNode;
@@ -72,9 +70,7 @@ public class DsaLinkedList {
 	 */
 	public DsaLinkedList insert(DsaLinkedList list, Object data) {
 		try {
-			if (list == null) {
-				throw (new Exception("list cant be empty"));
-			}
+			
 			Node newNode = new Node(data);
 			if (list.head == null) {
 				list.head = newNode;
