@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class JobScheduler {
 
-	int total_processes;
+	int totalProcesses;
 	Scanner scanner;
 
 	public JobScheduler() {
@@ -24,15 +24,15 @@ public class JobScheduler {
 		int i, process[][] = null;
 		try {
 
-			System.out.println("total no. of process :: ");
-			total_processes = scanner.nextInt();
-			process = new int[total_processes][5];
+			System.out.println("total no. of process : ");
+			totalProcesses = scanner.nextInt();
+			process = new int[totalProcesses][5];
 
-			for (i = 0; i < total_processes; i++) {
-				System.out.println("Arrival Time :: ");
+			for (i = 0; i < totalProcesses; i++) {
+				System.out.println("Arrival Time : ");
 				process[i][0] = scanner.nextInt();
 
-				System.out.println("Burst Time :: ");
+				System.out.println("Burst Time : ");
 				process[i][1] = scanner.nextInt();
 			}
 
@@ -51,7 +51,7 @@ public class JobScheduler {
 	public int[][] waitTime(int p[][]) {
 		int i;
 		try {
-			for (i = 0; i < total_processes; i++) {
+			for (i = 0; i < totalProcesses; i++) {
 				if (i > 0 && p[i - 1][1] > p[i][0]) {
 					p[i][2] = p[i - 1][1] - p[i][0];
 				} else
@@ -69,7 +69,7 @@ public class JobScheduler {
 	 */
 	public int[][] turnAroundTime(int p[][]) {
 		int i;
-		for (i = 0; i < total_processes; i++) {
+		for (i = 0; i < totalProcesses; i++) {
 			p[i][3] = p[i][4] - p[i][0];
 		}
 		return p;
@@ -82,7 +82,7 @@ public class JobScheduler {
 	public int[][] completionTime(int p[][]) {
 		int i;
 		try {
-			for (i = 0; i < total_processes; i++)
+			for (i = 0; i < totalProcesses; i++)
 
 				if (p[i][2] > 0) {
 					System.out.println("p[i][2]:" + p[i][2]);
@@ -105,9 +105,9 @@ public class JobScheduler {
 		int i;
 		float avg = 0;
 		try {
-			for (i = 0; i < total_processes; i++)
+			for (i = 0; i < totalProcesses; i++)
 				avg += p[i][2];
-			avg /= total_processes;
+			avg /= totalProcesses;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -122,7 +122,7 @@ public class JobScheduler {
 		int max = 0;
 		int i;
 		try {
-			for (i = 0; i < total_processes; i++)
+			for (i = 0; i < totalProcesses; i++)
 
 				if (p[i][2] > max) {
 					max = p[i][2];
@@ -142,7 +142,7 @@ public class JobScheduler {
 		try {
 			System.out.println(
 					"  Process no.   Arrival time  Burst Time  Waiting Time  TurnAround Time  Completion Time  ");
-			for (int i = 0; i < total_processes; i++) {
+			for (int i = 0; i < totalProcesses; i++) {
 				System.out.print("     p" + i);
 				for (int j = 0; j < 5; j++)
 					System.out.print("             " + p[i][j]);
