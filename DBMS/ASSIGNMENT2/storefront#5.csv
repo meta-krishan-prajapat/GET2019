@@ -1,0 +1,9 @@
+id,name,root
+2,stationary,NULL
+3,electronics,NULL
+5,"clothing men",1
+6,"clothing women",1
+7,"footwear men",4
+8,"footwear women",4
+9,accessories,NULL
+10,"kids toys",NULL
