@@ -1,0 +1,11 @@
+orderId,productId,product_name,order_quantity,total_price,user_name,email,order_placing_date,orderStatus
+310,10,suit,2,1200,vinod,vinod@gmail.com,2019-08-22,"order placed"
+253,3,heels,1,700,nisha,nisha@gmail.com,2019-08-22,shipped
+400,8,"toy cycle",1,1400,naman,naman@gmail.com,2019-08-22,shipped
+325,5,"mobile cover",1,1200,krishan,kp123@gmail.com,2019-08-22,"order placed"
+365,7,"toy laptop",1,1200,kp,kp@gmail.com,2019-08-22,shipped
+324,2,headphones,1,1600,krishan,kp123@gmail.com,2019-08-22,"order placed"
+322,5,"mobile cover",1,1200,neha,neha@gmail.com,2019-08-22,"order placed"
+295,13,pens,1,10,jyoti,jyoti@gmail.com,2019-08-22,shipped
+450,12,notpads,2,100,vinod,vinod@gmail.com,2019-08-22,shipped
+355,5,"mobile cover",1,1200,nisha,nisha@gmail.com,2019-08-22,"order placed"
