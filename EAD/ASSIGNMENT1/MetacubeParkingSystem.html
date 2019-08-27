@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>MetacubeParkingSystem</title>
+	<script>
+		var id = 1;
+		function registerEmployee() {
+
+
+			employee_name = document.forms["employeeDetailsform"]["employee_name"].value;
+			employee_name_letters = /^([a-z]+[ ]?|[a-z]+)+$/;
+			if (employee_name == "") {
+				document.getElementById('username_error_message').innerHTML = "Name must be filled out";
+				document.getElementById('username_error_message').style.color = "red";
+				return false;
+			}
+			if (employee_name.length < 2) {
+				document.getElementById('username_error_message').innerHTML = "Name must be contain minimum two character";
+				document.getElementById('username_error_message').style.color = "red";
+				return false;
+			}
+			if (!employee_name.match(employee_name_letters)) {
+				document.getElementById('username_error_message').innerHTML = "Name should not contain any numbers or special character";
+				document.getElementById('username_error_message').style.color = "red";
+				return false;
+			}
+			//for password validation//
+			var employee_password = document.forms["employeeDetailsform"]["employee_password"].value;
+			var employee_confirm_password = document.forms["employeeDetailsform"]["employee_confirm_password"].value;
+			if (employee_password == "") {
+				document.getElementById('password_error_message').innerHTML = "Password must be filled out";
+				document.getElementById('password_error_message').style.color = "red";
+				return false;
+			}
+
+			if (!employee_password.match("(?=.*[a-z])")) {
+				document.getElementById('password_error_message').innerHTML = "Password contain at least one lower case";
+				document.getElementById('password_error_message').style.color = "red";
+				return false;
+			}
+			if (!employee_password.match("(?=.*[0-9])")) {
+				document.getElementById('password_error_message').innerHTML = "Password should contain at one digit ";
+				document.getElementById('password_error_message').style.color = "red";
+				return false;
+			}
+			if (!employee_password.match("(?=.*[A-Z])")) {
+				document.getElementById('password_error_message').innerHTML = "Password contain at least one upper case ";
+				document.getElementById('password_error_message').style.color = "red";
+				return false;
+			}
+			if (!employee_password.match("(?=^.{8,}$)")) {
+				document.getElementById('password_error_message').innerHTML = "Password length minimum 8 ";
+				document.getElementById('password_error_message').style.color = "red";
+				return false;
+			}
+			//check confirm password//
+			if (!employee_password.match(employee_confirm_password)) {
+				document.getElementById('confirm_password_error_message').innerHTML = "Password mismatch";
+				document.getElementById('confirm_password_error_message').style.color = "red";
+				return false;
+			}
+			//for email validation//
+			var employee_emailid = document.forms["employeeDetailsform"]["employee_emailid"].value;
+			var emailid_pattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.]{3,5})+\.([A-Za-z]{2,4})$/;
+			if (emailid_pattern.test(employee_emailid) == false) {
+				document.getElementById('emailid_error_message').innerHTML = "Enter Valid Email Address ";
+				document.getElementById('emailid_error_message').style.color = "red";
+				return false;
+			}
+			//for contact validaton//
+			var employee_contact = document.forms["employeeDetailsform"]["employee_contact"].value;
+
+			if (employee_contact.length < 8) {
+				if (employee_contact.length == 0) {
+					document.getElementById('contact_error_message').innerHTML = "Contact field is empty";
+
+				}
+				else {
+					document.getElementById('contact_error_message').innerHTML = "Contact length should be greater then 8";
+				}
+				document.getElementById('contact_error_message').style.color = "red";
+
+				return false;
+			}
+			//for gender validaton//
+			var employee_gender = document.getElementsByName("employee_gender");
+
+			if (employee_gender[0].checked == false && employee_gender[1].checked == false) {
+				document.getElementById('gender_error_message').innerHTML = "Please select your gender";
+				document.getElementById('gender_error_message').style.color = "red";
+				return false;
+			}
+			else {
+				var msg = "your Employee id is :" + id;
+				document.getElementById("employeeDetails").innerHTML = "<h3>successfully registered !! <br>" + msg + "</h3>";
+
+				document.getElementById("addVehicleForm").style.display = "block";
+			}
+		}
+		function numbers(e) {
+			var x = (window.event) ? event.keyCode : e.which;
+			if ((x >= 48 && x <= 57)) {
+				return true;
+			}
+
+			else {
+				return false;
+			}
+		}
+		function validateVehicleForm() {
+			vehicle_emp_name = document.getElementById("vehicle_name");
+			vehicle_emp_id = document.getElementById("empId");
+			vehicle_type1 = document.getElementById("vehicleType1");
+			vehicle_type2 = document.getElementById("vehicleType2");
+			vehicle_type3 = document.getElementById("vehicleType3");
+			vehicle_emp_number = document.getElementById("vehicle_number");
+			if (vehicle_emp_name.value == "") {
+				document.getElementById('vehicle_emp_error_message').innerHTML = "Name must be filled out";
+				document.getElementById('vehicle_emp_error_message').style.color = "red";
+				return false;
+			}
+			employee_name_letters = /^([a-z]+[ ]?|[a-z]+)+$/;
+			if (!vehicle_emp_name.value.match(employee_name_letters)) {
+				document.getElementById('vehicle_emp_error_message').innerHTML = "Name should not contain any numbers or special character";
+				document.getElementById('vehicle_emp_error_message').style.color = "red";
+				return false;
+			}
+
+			if (vehicle_emp_id.value == "") {
+				document.getElementById('vehicle_emp_id_error_message').innerHTML = "Id must be filled out";
+				document.getElementById('vehicle_emp_id_error_message').style.color = "red";
+				return false;
+			}
+			if (vehicle_emp_number.value == "") {
+				document.getElementById('vehicle_number_error_message').innerHTML = "Number must be filled out";
+				document.getElementById('vehicle_number_error_message').style.color = "red";
+				return false;
+			}
+			if (!vehicle_type1.checked && !vehicle_type2.checked && !vehicle_type3.checked) {
+				document.getElementById('vehicle_type_error_message').innerHTML = "Type must be filled out";
+				document.getElementById('vehicle_type_error_message').style.color = "red";
+				return false;
+			}
+			else {
+
+				document.getElementById("employeeDetails").style.display = "none";
+
+				var dailyPassPrice, monthlyPassPrice, yearlyPassPrice;
+				if (document.getElementById("vehicleType1").checked) {
+
+					dailyPassPrice = 5;
+					monthlyPassPrice = 100;
+					yearlyPassPrice = 500;
+					document.getElementById("daily").value = dailyPassPrice;
+					document.getElementById("monthly").value = monthlyPassPrice;
+					document.getElementById("yearly").value = yearlyPassPrice;
+					document.getElementById("dailylabel").innerHTML = "daily Pass Price is " + dailyPassPrice;
+					document.getElementById("monthlylabel").innerHTML = "monthly Pass Price is " + monthlyPassPrice;
+					document.getElementById("yearlylabel").innerHTML = "yearly Pass Price is " + yearlyPassPrice;
+					document.getElementById("passDetail").style.display = "block";
+
+					document.getElementById("addVehicleForm").innerHTML = "";
+				}
+				else if (document.getElementById("vehicleType2").checked) {
+					dailyPassPrice = 10;
+					monthlyPassPrice = 200;
+					yearlyPassPrice = 1000;
+
+					document.getElementById("daily").value = dailyPassPrice;
+					document.getElementById("monthly").value = monthlyPassPrice;
+					document.getElementById("yearly").value = yearlyPassPrice;
+					document.getElementById("dailylabel").innerHTML = "daily Pass Price is " + dailyPassPrice;
+					document.getElementById("monthlylabel").innerHTML = "monthly Pass Price is " + monthlyPassPrice;
+					document.getElementById("yearlylabel").innerHTML = "yearly Pass Price is " + yearlyPassPrice;
+					document.getElementById("passDetail").style.display = "block";
+
+					document.getElementById("addVehicleForm").innerHTML = "";
+				}
+				else if (document.getElementById("vehicleType3").checked) {
+					dailyPassPrice = 20;
+					monthlyPassPrice = 500;
+					yearlyPassPrice = 3500;
+					document.getElementById("daily").value = dailyPassPrice;
+					document.getElementById("monthly").value = monthlyPassPrice;
+					document.getElementById("yearly").value = yearlyPassPrice;
+					document.getElementById("dailylabel").innerHTML = "daily Pass Price is " + dailyPassPrice;
+					document.getElementById("monthlylabel").innerHTML = "monthly Pass Price is " + monthlyPassPrice;
+					document.getElementById("yearlylabel").innerHTML = "yearly Pass Price is " + yearlyPassPrice;
+					document.getElementById("passDetail").style.display = "block";
+					document.getElementById("addVehicleForm").innerHTML = "";
+				}
+			}
+
+
+		}
+	</script>
+</head>
+
+<body style="text-align:center">
+	<div id="employeeDetails">
+		<form onsubmit=" return registerEmployee()" action="" method="POST" name="employeeDetailsform">
+			<table cellpadding=10 cellspacing=10 align="center" style="background-color: rgb(173, 235, 235)">
+				<tr>
+					<td colspan="3">
+						<h3>Employee details:<h3><br>
+					</td>
+				</tr>
+
+				<tr>
+					<td align="left">
+						<label><b>Name:</b></label>
+					</td>
+					<td>
+						<input type="text" name="employee_name" placeholder="name">
+					</td>
+
+					<td>
+						<span id="username_error_message"></span>
+					</td>
+				</tr>
+
+				<tr>
+					<td align="left">
+						<label><b>Emailid:</b></label>
+					</td>
+					<td>
+						<input type="text" name="employee_emailid" placeholder="email">
+					</td>
+
+					<td>
+						<span id="emailid_error_message"></span>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td align="left">
+						<label><b>contact no:</b></label>
+					</td>
+					<td>
+						<input type="text" name="employee_contact" maxlength="10"
+							onkeypress="return numbers(this.event)" placeholder="contact no.">
+					</td>
+
+					<td>
+						<span id="contact_error_message"></span>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td align="left">
+						<label><b>Gender:</b></label>
+					</td>
+					<td>
+						<input type="radio" name="employee_gender" value="Male">
+						<label><b>Male</b></label>
+						<input type="radio" name="employee_gender" value="Female">
+						<label><b>Female</b></label><br>
+					</td>
+
+					<td>
+						<span id="gender_error_message"></span>
+					</td>
+				</tr>
+
+				<tr>
+					<td align="left">
+						<label><b>Password:</b></label>
+					</td>
+					<td>
+						<input type="password" name="employee_password" placeholder="password">
+					</td>
+
+					<td>
+						<span id="password_error_message"></span>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<label><b>Confirm Password:</b></label>
+					</td>
+					<td>
+						<input type="password" name="employee_confirm_password" placeholder="confirm password">
+
+					</td>
+
+					<td>
+						<span id="confirm_password_error_message"></span>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="3">
+						<input type="submit" value="submit" style="margin-top:20px">
+					</td>
+
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="addVehicleForm" style="display:none">
+		<form action="" onsubmit="return validateVehicleForm()" method="POST">
+			<table cellpadding=10 cellspacing=10 align="center" style="background-color: rgb(173, 235, 235)">
+				<tr>
+					<td colspan="3">
+						<h3>Add Vehicle:<h3><br>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<label><b>Name:</b></label>
+					</td>
+					<td>
+						<input type="text" id="vehicle_name" placeholder="vehicle name">
+					</td>
+
+					<td>
+						<span id="vehicle_emp_error_message"></span>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<label><b>Vehicle Type:</b></label>
+					</td>
+					<td>
+						<input type="radio" name="vehicleType" value="Cycle" id="vehicleType1">
+						<label><b>Cycle</b></label>
+						<input type="radio" name="vehicleType" value="MotorCycle" id="vehicleType2">
+						<label><b>MotorCycle</b></label>
+						<input type="radio" name="vehicleType" value="FourWheeler" id="vehicleType3">
+						<label><b>FourWheeler</b></label>
+					</td>
+
+					<td>
+						<span id="vehicle_type_error_message"></span>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<label><b>Employee Id:</b></label>
+					</td>
+					<td>
+						<input type="text" id="empId" placeholder="Employee Id">
+					</td>
+
+					<td>
+						<span id="vehicle_emp_id_error_message"></span>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Vehicle Number</label></td>
+					<td><input type="text" onkeypress="return numbers(event)" maxlength=4 name="vehicle_number"
+							id="vehicle_number" placeholder="Number(Last four digit)"></td>
+					<td><span id="vehicle_number_error_message"></span></td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<input type="submit" value="get Pass Details">
+					</td>
+
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div style="display: none" id="passDetail">
+		<form id="passDetailForm">
+			<table cellpadding=10 cellspacing=10 align="center" style="background-color: rgb(173, 235, 235)">
+				<tr>
+					<td colspan="3">
+						<h3>Pass prices<h3><br>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<input type="radio" name="PassPriceDetail" value="" id="daily">
+					</td>
+					<td>
+						<label id="dailylabel"><b></b></label>
+					</td>
+
+					<td>
+						<span></span>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<input type="radio" name="PassPriceDetail" value="" id="monthly">
+					</td>
+					<td>
+						<label id="monthlylabel"><b></b></label>
+					</td>
+
+					<td>
+						<span></span>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">
+						<input type="radio" name="PassPriceDetail" value="" id="yearly">
+					</td>
+					<td>
+						<label id="yearlylabel"><b>:</b></label>
+					</td>
+
+					<td>
+						<span></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<input type="submit" value="Get Pass">
+					</td>
+
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>
