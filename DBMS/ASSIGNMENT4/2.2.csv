@@ -1,0 +1,20 @@
+orderId,userId,user_name,productId,product_name,order_placing_date,total_price,orderStatus
+324,1,krishan,2,headphones,2019-08-22,1600,"order placed"
+325,1,krishan,5,"mobile cover",2019-08-22,1200,"order placed"
+210,2,chandra,4,shoes,2019-04-13,1000,canceled
+210,2,chandra,9,tshirt,2019-04-13,1000,delivered
+253,3,nisha,3,heels,2019-08-22,700,shipped
+355,3,nisha,5,"mobile cover",2019-08-22,1200,"order placed"
+222,5,jyoti,7,"toy laptop",2019-06-12,1200,canceled
+222,5,jyoti,8,"toy cycle",2019-06-12,1400,canceled
+295,5,jyoti,13,pens,2019-08-22,10,shipped
+243,6,kp,9,tshirt,2019-06-14,500,shipped
+243,6,kp,10,suit,2019-06-14,600,shipped
+365,6,kp,7,"toy laptop",2019-08-22,1200,shipped
+185,7,naman,11,bags,2019-06-04,1000,delivered
+400,7,naman,8,"toy cycle",2019-08-22,1400,shipped
+310,8,vinod,10,suit,2019-08-22,1200,"order placed"
+450,8,vinod,12,notpads,2019-08-22,100,shipped
+322,9,neha,5,"mobile cover",2019-08-22,1200,"order placed"
+103,10,soni,2,headphones,2019-05-05,1600,canceled
+103,10,soni,11,bags,2019-05-05,1000,delivered
