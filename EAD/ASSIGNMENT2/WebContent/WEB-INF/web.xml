@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+	<servlet>
+		<servlet-name>addStudentDetail</servlet-name>
+		<servlet-class>com.metacube.servlet.AddStudentDetailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addStudentDetail</servlet-name>
+		<url-pattern>/addStudent</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>showAllStudents</servlet-name>
+		<servlet-class>com.metacube.servlet.ShowAllStudentsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>showAllStudents</servlet-name>
+		<url-pattern>/showStudents</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>updateServlet</servlet-name>
+		<servlet-class>com.metacube.servlet.UpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateServlet</servlet-name>
+		<url-pattern>/updateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>updateExistingStudent</servlet-name>
+		<servlet-class>com.metacube.servlet.UpdateStudentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateExistingStudent</servlet-name>
+		<url-pattern>/updateStudentServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>searchDataByFNameLName</servlet-name>
+		<servlet-class>com.metacube.servlet.SearchStudentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>searchDataByFNameLName</servlet-name>
+		<url-pattern>/searchData</url-pattern>
+	</servlet-mapping>
+	
+
+</web-app>

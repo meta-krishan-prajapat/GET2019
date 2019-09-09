@@ -1,0 +1,127 @@
+<!-- addStudentDetail html page takes the details of the student that are to be inserted in the database
+ and on submit the form goes under validation process and then the details goes to AddStudentDetailSertvlet.java servlet  -->
+<html>
+
+<head>
+<title>Student Form</title>
+
+<script src="js/addStudent.js"></script>
+<style>
+.studentTable {
+	background-color: #d3bcf5;
+	text-align: center;
+	border-spacing: 10px;
+}
+
+input {
+	width: 200px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+}
+
+input[type=text] {
+	border: 4px solid #e4d7f7;
+	border-radius: 5px;
+}
+
+input[type=email] {
+	border: 4px solid #e4d7f7;
+	border-radius: 5px;
+}
+
+body {
+	background-color: #e4d7f7;
+}
+
+input[type=submit] {
+	background-color: #008CBA;;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+	<br>
+	<br>
+	<h1 align="center">
+		<font color="#314c54">Add Student Details Here</font>
+	</h1>
+	<br>
+	<br>
+	<div class="studentDetails" align="center">
+		<form onsubmit=" return validateStudentDetails()" action="addStudent"
+			method="POST" name="studentDetailsform">
+			<table class="studentTable">
+				<tr>
+					<td colspan="2">
+						<h2 align="center">
+							Student details:
+							<h2>
+								<br>
+					</td>
+				</tr>
+
+				<tr>
+					<td align="left"><label><b>First Name:</b></label></td>
+					<td><input type="text" name="first_Name"
+						placeholder="First Name"></td>
+
+					<td><span id="first_Name_error_message"></span></td>
+				</tr>
+
+				<tr>
+					<td align="left"><label><b>Last Name:</b></label></td>
+					<td><input type="text" name="last_Name"
+						placeholder="Last Name"></td>
+
+					<td><span id="last_Name_error_message"></span></td>
+				</tr>
+
+				<tr>
+					<td align="left"><label><b>Father's Name:</b></label></td>
+					<td><input type="text" name="father_Name"
+						placeholder="Father's Name"></td>
+
+					<td><span id="father_Name_error_message"></span></td>
+				</tr>
+				<tr>
+					<td align="left"><label><b>Email:</b></label></td>
+					<td><input type="email" name="email" placeholder="Email">
+					</td>
+
+					<td><span id="email_error_message"></span></td>
+				</tr>
+				<tr>
+					<td align="left"><label><b>Class:</b></label></td>
+					<td><input type="text" name="class_Name"
+						onkeypress="return numbers(event)" maxlength=2 placeholder="Class">
+					</td>
+
+					<td><span id="class_Name_error_message"></span></td>
+				</tr>
+				<tr>
+					<td align="left"><label><b>Age:</b></label></td>
+					<td><input type="text" name="age"
+						onkeypress="return numbers(event)" maxlength=2 placeholder="Age">
+					</td>
+
+					<td><span id="age_error_message"></span></td>
+				</tr>
+
+				<tr>
+					<td colspan="3"><input type="submit" value="Submit"
+						style="margin-top: 20px"></td>
+
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>
