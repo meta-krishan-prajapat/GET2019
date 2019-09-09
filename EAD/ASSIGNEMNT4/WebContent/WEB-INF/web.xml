@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  	<display-name>EmployeeDetails</display-name>
+<filter>
+	<filter-name>homeFilter</filter-name>
+	<filter-class>ServletFilters.HomeFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>homeFilter</filter-name>
+	<url-pattern>/home</url-pattern>
+</filter-mapping>
+	<filter>
+	<filter-name>registerFilter</filter-name>
+	<filter-class>ServletFilters.RegisterFilter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>registerFilter</filter-name>
+	<url-pattern>/register</url-pattern>
+</filter-mapping>
+<filter>
+	<filter-name>vehicleRegister</filter-name>
+	<filter-class>ServletFilters.VehicleRegisterFilter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>vehicleRegister</filter-name>
+	<url-pattern>/vehicleRegister</url-pattern>
+</filter-mapping>
+<filter>
+	<filter-name>updateEmployeeResultFilter</filter-name>
+	<filter-class>ServletFilters.UpdateRecordsFilter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>updateEmployeeResultFilter</filter-name>
+	<url-pattern>/updateEmployeeResult</url-pattern>
+</filter-mapping>
+	<servlet>
+		<servlet-name>employeeRegister</servlet-name>
+		<servlet-class>com.metacube.employee.servlet.EmployeeRegister</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>employeeRegister</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>vehicleRegisterForEmployee</servlet-name>
+		<servlet-class>com.metacube.employee.servlet.EmployeeVehicleRegister</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>vehicleRegisterForEmployee</servlet-name>
+		<url-pattern>/vehicleRegister</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>employeeHome</servlet-name>
+		<servlet-class>com.metacube.employee.servlet.EmployeeHomeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>employeeHome</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>employeeWelcome</servlet-name>
+		<servlet-class>com.metacube.employee.servlet.EmployeeWelcomeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>employeeWelcome</servlet-name>
+		<url-pattern>/employeeWelcome</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>updateEmployeeData</servlet-name>
+		<servlet-class>com.metacube.employee.servlet.UpdateEmployeeResultServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateEmployeeData</servlet-name>
+		<url-pattern>/updateEmployeeResult</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>friendsList</servlet-name>
+		<servlet-class>com.metacube.employee.servlet.FriendListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>friendsList</servlet-name>
+		<url-pattern>/friends</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>friendsData</servlet-name>
+		<servlet-class>com.metacube.employee.servlet.FriendDataServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>friendsData</servlet-name>
+		<url-pattern>/friendsData</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>logoutServlet</servlet-name>
+		<servlet-class>com.metacube.employee.servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logoutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+
+</web-app>
