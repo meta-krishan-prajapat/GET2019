@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>EmployeeDetails</title>
+	<Script src="js/validateEmployee.js"></Script>
+	<style>
+body {
+	background-color: lightblue;
+}
+
+a:link {
+	color: maroon;
+}
+
+a:visited {
+	color: green;
+}
+
+a:hover {
+	color: red;
+}
+
+a:active {
+	color: yellow;
+}
+
+table {
+	background-color: #d1ede7;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+</style>
+</head>
+
+<body style="text-align: center;">
+	<div>
+		<a href="login.html">Already Registered? Login Here</a>
+	</div>
+	<br>
+	<div id="employeeDetails">
+		<form onsubmit=" return registerEmployee()" action="register"
+			method="POST" name="employeeDetailsform">
+			<table cellpadding=10 cellspacing=10 align="center">
+				<tr>
+					<td colspan="3">
+						<h3>
+							Employee Details
+							<h3>
+								<br>
+					</td>
+				</tr>
+
+				<tr>
+					<td align="left"><label><b>Name:</b></label></td>
+					<td><input type="text" name="empName" placeholder="Name">
+					</td>
+
+					<td><span id="empName_error_message"></span></td>
+				</tr>
+
+				<tr>
+					<td align="left"><label><b>Email Id:</b></label></td>
+					<td><input type="text" name="empEmail" placeholder="Email">
+					</td>
+
+					<td><span id="empEmail_error_message"></span></td>
+				</tr>
+
+
+				<tr>
+					<td align="left"><label><b>Contact no:</b></label></td>
+					<td><input type="text" name="empContact" maxlength="10"
+						onkeypress="return numbers(this.event)" placeholder="Contact no.">
+					</td>
+
+					<td><span id="empContact_error_message"></span></td>
+				</tr>
+
+
+				<tr>
+					<td align="left"><label><b>Gender:</b></label></td>
+					<td><input type="radio" name="empGender" value="Male">
+						<label><b>Male</b></label> <input type="radio" name="empGender"
+						value="Female"> <label><b>Female</b></label><br></td>
+
+					<td><span id="empGender_error_message"></span></td>
+				</tr>
+
+				<tr>
+					<td align="left"><label><b>Password:</b></label></td>
+					<td><input type="password" name="empPassword"
+						placeholder="Password"></td>
+
+					<td><span id="empPassword_error_message"></span></td>
+				</tr>
+				<tr>
+					<td align="left"><label><b>Confirm Password:</b></label></td>
+					<td><input type="password" name="empConfirmPassword"
+						placeholder="Confirm Password"></td>
+
+					<td><span id="confirm_empPassword_error_message"></span></td>
+				</tr>
+				<tr>
+					<td align="left"><label><b>Organization</b></label></td>
+					<td><select name="empOrganization">
+							<option value="--Select Value--">--Select Value--</option>
+							<option value="Metacube">Metacube</option>
+							<option value="Google">Google</option>
+							<option value="Microsoft">Microsoft</option>
+							<option value="TCS">TCS</option>
+					</select></td>
+
+					<td><span id="empOrganization_error_message"></span></td>
+				</tr>
+
+				<tr>
+					<td colspan="3"><input type="submit" value="Submit"
+						style="margin-top: 20px"></td>
+
+				</tr>
+			</table>
+		</form>
+	</div>
+
+</body>
+
+</html>
