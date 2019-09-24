@@ -1,6 +1,3 @@
-/*
- * DAO using Hibernate Template
- */
 package com.metacube.Student.dao;
 
 import java.util.List;
@@ -9,6 +6,9 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import com.metacube.Student.model.Student;
 
+/**
+ * Student DAO using Hibernate Template
+ */
 public class StudentDAO
 {
 
@@ -21,7 +21,23 @@ public class StudentDAO
 
 	public void setTemplate(HibernateTemplate template)
 	{
-		this.template = template;
+		try
+		{
+			if (template != null)
+			{
+				this.template = template;
+			}
+			else
+			{
+				throw new Exception("null not accepted");
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			e.getMessage();
+		}
+
 	}
 
 	/**
