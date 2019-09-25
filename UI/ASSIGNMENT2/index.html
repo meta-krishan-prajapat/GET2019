@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Metacube Parking System</title>
+    <style>
+         body {margin: 0; height: 100%; overflow: hidden}
+        .collapsible {
+            background-color: #36a4d8;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border-color:#80eaea;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: #3d5252;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+          
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+           
+        }
+
+        .Form {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+    </style>
+    
+</head>
+
+<body background="se.jpg">
+    <!-- Navigation Bar -->
+    <nav>
+        &nbsp; <a href="#addEmployee">
+            <font size="5px"> Add Employee </font>
+        </a> &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="#addVehicle">
+            <font size="5px"> Add Vehicle </font>
+        </a> &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="#price">
+            <font size="5px"> Pricing </font>
+        </a> &nbsp; &nbsp; &nbsp; &nbsp;
+        <a href="#feedback">
+            <font size="5px"> Give Feedback </font>
+        </a>
+    </nav>
+    <br>
+    <br>
+    <div align="center">
+        <img src="logo-metacube.png" />
+    </div>
+    <br>
+    <br>
+    <!-- Registration Form -->
+    <button type="button" class="collapsible">Registration Form</button>
+    <div align="center" id="addEmployee" class="Form">
+        <form name="RegistrationForm">
+            <h1>
+                Registration Form
+            </h1>
+            <table cellspacing="5px" cellpadding="5px">
+                <tr>
+                    <td><label>
+                            <font size="5px">Full name :</font>
+                        </label></td>
+                    <td><input type="text" name="name" placeholder="Name" pattern="[A-z0-9À-ž\s]){2,}" required /></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Gender :</font>
+                        </label></td>
+                    <td><select name="gender" required>
+                            <option selected>---Select One Please---</option>
+                            <option>Female</option>
+                            <option>Male</option>
+                            <option>Other</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Email Id :</font>
+                        </label></td>
+                    <td><input type="email" name="mail" placeholder="Email Address" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Password :</font>
+                        </label></td>
+                    <td><input type="password" name="pass" placeholder="Password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                            required /></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Confirm Password :</font>
+                        </label></td>
+                    <td><input type="password" name="repass" placeholder="Re-enter Password" required /></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Contact Number :</font>
+                        </label></td>
+                    <td><input type="tel" name="contact" placeholder="Contact number" pattern="^\d{4}-\d{3}-\d{4}$"
+                            required /></td>
+                </tr>
+            </table>
+            <br> <input type="submit" value="Register" />
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- Add Vehicle Form -->
+    <button type="button" class="collapsible" >Vehicle Form</button>
+    <div align="center" id="addVehicle" class="Form">
+        <form name="VehicleDetailForm">
+            <h1>
+                Vehicle Details Form
+            </h1>
+            <table cellspacing="5px" cellpadding="5px">
+                <tr>
+                    <td><label>
+                            <font size="5px">Name :</font>
+                        </label></td>
+                    <td><input type="text" name="name" placeholder="Vehicle Name" pattern="[A-z0-9À-ž\s]){2,}"
+                            required /></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Vehicle Type :</font>
+                        </label></td>
+                    <td><select name="vehType" required>
+                            <option selected>---Select One Please---</option>
+                            <option>Cylce</option>
+                            <option>Motorlcyle</option>
+                            <option>Four Wheelers</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Vehicle Number :</font>
+                        </label></td>
+                    <td><input type="text" name="vehNum" placeholder="RJ XX XXXX"
+                            pattern="^[A-Z]{2} [0-9]{2} [A-Z]{2} [0-9]{4}$" required /></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Identification :</font>
+                        </label></td>
+                    <td><textarea name="identification" required> </textarea> </td>
+                </tr>
+            </table>
+            <br> <input type="submit" value="Register" />
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- Feedback Form -->
+    <button type="button" class="collapsible" >Feedback Form</button>
+    <div align="center" id="feedback" class="Form">
+        <form name="FeedbackForm">
+            <h1>Get In Touch</h1>
+            <table>
+                <tr>
+                    <td><label>
+                            <font size="5px">Name :</font>
+                        </label></td>
+                    <td><input type="text" name="name" pattern="[A-Za-z]" required /></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Email :</font>
+                        </label></td>
+                    <td><input type="email" name="mail" required /></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Subject :</font>
+                        </label></td>
+                    <td><input type="text" name="subject" required /></td>
+                </tr>
+                <tr>
+                    <td><label>
+                            <font size="5px">Message :</font>
+                        </label></td>
+                    <td><textarea name="msg"></textarea></td>
+                </tr>
+            </table>
+            <br> <input type="submit" value="Send Email" />
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- Price Form -->
+    <button type="button" class="collapsible">Price Form</button>
+    <div align="center" id="price" class="Form">
+        <div align="center" id="cycle">
+            <h1>Cycle</h1>
+            <span><em>$5 Daily</em></span> <br>
+            <span><em>$100 Monthly</em></span> <br>
+            <span><em>$500 Yearly</em></span><br><br>
+            <input type="button" value="Purchase Now" />
+        </div>
+        <div align="center" id="motorcycle">
+            <h1>MotorCycle</h1>
+            <span><em>$10 Daily</em></span> <br>
+            <span><em>$200 Monthly</em></span> <br>
+            <span><em>$1000 Yearly</em></span><br><br>
+            <input type="button" value="Purchase Now" />
+        </div>
+        <div align="center" id="fourwheeler">
+            <h1>Four Wheelers</h1>
+            <span><em>$20 Daily</em></span> <br>
+            <span><em>$500 Monthly</em></span> <br>
+            <span><em>$3500 Yearly</em></span><br><br>
+            <input type="button" value="Purchase Now" />
+        </div>
+    </div>
+ 
+    <script src="my.js"></script>
+</body>
+
+</html>
