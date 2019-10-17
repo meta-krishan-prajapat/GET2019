@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Metacube Parking System</title>
+    <Style>
+        body {
+            background-color: #efeff5;
+        }
+
+        #addEmployee {
+            color: black;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        #copyright {
+            text-align: center;
+        }
+
+        #imgSrc {
+            text-align: center;
+        }
+
+        #val_error_message {
+            text-align: left;
+            font-size: large;
+        }
+
+        #vehicleNameDiv {
+            background-color: rgb(97, 153, 190);
+        }
+
+        input,
+        select {
+            border-radius: 4px;
+            line-height: 200%;
+            margin-left: 30px;
+            color: #000080;
+            font-size: 20px;
+        }
+
+        #firstdiv {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        }
+    </Style>
+
+    <script src="employee.js"></script>
+</head>
+
+<body onload="onLoadLabel()">
+    <header>
+        <div id="imgSrc">
+            <img src="logo-metacube.png" />
+        </div>
+    </header>
+    <section>
+        <div id="addEmployee">
+            <form name="RegistrationForm">
+                <h1>
+                    Registration Form
+                </h1>
+                <label class="*label">
+                </label>
+                <div id="*div">
+                    <input type="text" id="input" />
+                </div>
+                <span id="val_error_message"></span>
+                <br>
+                <div id="next_button">
+                    <input type="button" id="firstdiv" value="Next" onclick="next()" />
+                </div>
+                <div style="display: none" class="Labels" id="nameDiv">
+                    <label>
+                        Full name :
+                    </label>
+
+                </div>
+                <div style="display:none" class="Labels" id="genderDiv">
+                    <label id="genderLabel">
+                    </label>
+                    <select name="gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div style="display: none" id="emailDiv">
+                    <label class="Labels">
+                        Email Id :
+                    </label>
+                </div>
+                <div style="display: none" id="ContactDiv">
+                    <label class="Labels">
+                        Contact Number :
+                    </label>
+                </div>
+                <div style="display: none" id="passwordDiv">
+                    <label class="Labels">
+                        Password :
+                    </label>
+                </div>
+                <div style="display: none" id="ConfirmPasswordLabel">
+                    <label class="Labels">
+                        Confirm Password :
+                    </label>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <section>
+        <div style="display: none" id="vehicleNameDiv">
+            <label class="Labels">
+                Vehicle name :
+            </label>
+
+        </div>
+        <div style="display:none" class="Labels" id="VehicleTypeDiv">
+            <label>
+                Vehicle Type :
+            </label>
+
+            <label>
+                <input type="radio" name="vehicleType" value="Cycle" id="vehicleType1">
+                Cycle</b>
+            </label>
+            <label>
+                <input type="radio" name="vehicleType" value="MotorCycle" id="vehicleType2">
+                Motor Cycle</b>
+            </label>
+            <label>
+                <input type="radio" name="vehicleType" value="FourWheeler" id="vehicleType3">
+                Four Wheeler</b>
+            </label>
+        </div>
+        <div style="display: none" id="VehicleNumberDiv">
+            <label class="Labels">
+                Vehicle Number :
+            </label>
+        </div>
+        </form>
+        </div>
+        <div style="display: none" class="Labels" id="passPriceDiv">
+
+            <label>
+                <h3>Pass prices<h3><br>
+            </label>
+
+
+            <label>
+
+                <input type="radio" name="PassPriceDetail" value="" id="daily">
+                Daily pass
+            </label>
+            <label>
+
+                <input type="radio" name="PassPriceDetail" value="" id="monthly">
+                Monthly pass
+            </label>
+            <label>
+
+                <input type="radio" name="PassPriceDetail" value="" id="yearly">
+                Yearly pass
+            </label>
+
+
+        </div>
+
+    </section>
+    <footer>
+        <div>
+            <p id="copyright">&copy Metacube Pvt. Ltd.</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>
